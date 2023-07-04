@@ -22,7 +22,7 @@
             <form action="" id="form">
                {!! csrf_field() !!}
                <div class="form-group">
-                  <label for="id">ID: </label>
+                  <label for="id" id="id">ID: </label>
                   <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
                   @error('title')
                       <small id="helpId" class="form-text text-danger">Help text</small>

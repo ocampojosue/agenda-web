@@ -23,3 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/evento', [App\Http\Controllers\EventController::class, 'index']);
 Route::post('/evento/agregar', [App\Http\Controllers\EventController::class, 'store']);
+Route::get('/evento/mostrar/', [App\Http\Controllers\EventController::class, 'show']);
+Route::post('/evento/editar/{id}', [App\Http\Controllers\EventController::class, 'edit']);
+Route::post('/evento/actualizar/{evento}', [App\Http\Controllers\EventController::class, 'update']);
+Route::post('/evento/borrar/{id}', [App\Http\Controllers\EventController::class, 'destroy']);
