@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let formulario = document.getElementById("form");
+    let formulario = document.getElementById("formEvent");
 
     var calendarEl = document.getElementById("agenda");
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: "dayGridMonth",
         locale: "es",
+        displayEventTime: false,
         headerToolbar: {
             left: "prev,next today",
             center: "title",
-            right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
+            right: "dayGridMonth",
         },
         events: appUrl + "/evento/mostrar",
         dateClick: function (info) {

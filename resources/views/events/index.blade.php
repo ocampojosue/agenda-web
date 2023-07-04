@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-   <div class="agenda" id="agenda">
-      Calendario
-   </div>
+   <div class="agenda" id="agenda"></div>
 </div>
 <!-- Button trigger modal -->
 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#event">
@@ -19,9 +17,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
          </div>
          <div class="modal-body">
-            <form action="" id="form">
+            <form action="" id="formEvent">
                {!! csrf_field() !!}
-               <div class="form-group">
+               <div class="form-group d-none">
                   <label for="id" id="id">ID: </label>
                   <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
                   @error('title')
@@ -39,13 +37,13 @@
                   <textarea class="form-control" name="description" id="description" rows="3"
                      placeholder="Escribe la Descripción del Evento"></textarea>
                </div>
-               <div class="form-group">
+               <div class="form-group d-none">
                   <label for="start">Start</label>
                   <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId"
                      placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                </div>
-               <div class="form-group">
+               <div class="form-group d-none">
                   <label for="end">End</label>
                   <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
