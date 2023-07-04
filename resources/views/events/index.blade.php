@@ -20,10 +20,13 @@
          </div>
          <div class="modal-body">
             <form action="" id="form">
+               {!! csrf_field() !!}
                <div class="form-group">
                   <label for="id">ID: </label>
                   <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
-                  <small id="helpId" class="form-text text-muted">Help text</small>
+                  @error('title')
+                      <small id="helpId" class="form-text text-danger">Help text</small>
+                  @enderror
                </div>
                <div class="form-group">
                   <label for="title">Título del Evento</label>
@@ -38,13 +41,13 @@
                </div>
                <div class="form-group">
                   <label for="start">Start</label>
-                  <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId"
+                  <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId"
                      placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                </div>
                <div class="form-group">
                   <label for="end">End</label>
-                  <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
+                  <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                   <small id="helpId" class="form-text text-muted">Help text</small>
                </div>
             </form>

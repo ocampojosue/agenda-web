@@ -22,5 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
             const datos = new FormData(formulario);
             console.log(datos); //Muestra los datos del formulario
             console.log(formulario); //Muestra el valor del input title
+            // https://agenda-web.test/evento/agregar
+            axios
+                .post("https://agenda-web.test/evento/agregar", datos)
+                .then((response) => {
+                    console.log(response);
+                    $("#event").modal("hide");
+                })
+                .catch((error) => {
+                    if (error.response) {
+                        console.log(error.response.data);
+                    }
+                });
         });
 });
