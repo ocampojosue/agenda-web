@@ -23,7 +23,9 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <script>
+        var appUrl = '{{ env("APP_URL") }}';
+    </script>
 </head>
 
 <body>

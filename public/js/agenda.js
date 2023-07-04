@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             center: "title",
             right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
         },
-        events: "https://agenda-web.test/evento/mostrar",
+        events: appUrl + "/evento/mostrar",
         dateClick: function (info) {
             formulario.reset();
             formulario.start.value = info.dateStr;
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eventClick: function (info) {
             var evento = info.event;
             axios
-                .post("https://agenda-web.test/evento/editar/" + info.event.id)
+                .post(appUrl +"/evento/editar/" + info.event.id)
                 .then((response) => {
                     formulario.id.value = response.data.id;
                     formulario.title.value = response.data.title;
@@ -41,20 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
     document
         .getElementById("btnGuardar")
         .addEventListener("click", function () {
-            sendData("https://agenda-web.test/evento/agregar");
+            sendData(appUrl +"/evento/agregar");
         });
     document
         .getElementById("btnEliminar")
         .addEventListener("click", function () {
             sendData(
-                "https://agenda-web.test/evento/borrar/" + formulario.id.value
+                appUrl +"/evento/borrar/" + formulario.id.value
             );
         });
     document
         .getElementById("btnModificar")
         .addEventListener("click", function () {
             sendData(
-                "https://agenda-web.test/evento/actualizar/" + formulario.id.value
+                appUrl +"/evento/actualizar/" + formulario.id.value
             );
         });
 
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const datos = new FormData(formulario);
         // console.log(datos); //Muestra los datos del formulario
         // console.log(formulario); //Muestra el valor del input title
-        // https://agenda-web.test/evento/agregar
+        //appUrl + /evento/agregar
         axios
             .post(url, datos)
             .then((response) => {
